@@ -1,0 +1,110 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+.post{
+  &.--js-animate{
+    .post__title-line{
+      width: 245px;
+      transform: scaleX(1) translateZ(0);
+    }
+    .post-head-lines{
+      span{
+        &:nth-child(1),&:nth-child(3){
+          transform: scaleX(1) translateZ(0);
+        }
+        &:nth-child(2){
+          transform: scaleY(1) translateZ(0);
+        }
+      }
+    }
+  }
+  margin-top: 65px;
+  @media (max-width: $breakpoint-md){
+    margin-top: 40px;
+  }
+  &__head{
+    background: url('../img/blog-bg.jpg') center no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  &__container{
+    position: relative;
+    height: 305px;
+    @media (max-width: $breakpoint-sm){
+      height: 200px;
+    }
+  }
+  &__title{
+    position: absolute;
+    display: block;
+    left: 10px;
+    top: 160px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    @media (max-width: $breakpoint-lg){
+      top: 140px;
+    }
+    @media (max-width: $breakpoint-sm){
+      font-size: 18px;
+      line-height: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__title-line{
+    position: absolute;
+    right: 260px;
+    top: 190px;
+    height: 14px;
+    width: 245px;
+    transition: all 1s cubic-bezier(.22,1,.36,1);
+    transition-delay: 0.3s;
+    background-color: var(--red-primary);
+    transform: scaleX(0) translateZ(0);
+    transform-origin: 100% 0;
+    @media (max-width: $breakpoint-md){
+      display: none;
+    }
+  }
+  &__content{
+    padding: 75px 0 60px 0;
+  }
+}
+
+.post-head-lines{
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  span{
+    position: absolute;
+    left: 10px;
+    height: 14px;
+    background-color: var(--red-primary);
+    transition: all 0.5s cubic-bezier(.22,1,.36,1);
+    &:nth-child(1){
+      width: 260px;
+      bottom: 12px;
+      transition-delay: 1s;
+      transform: scaleX(0) translateZ(0);
+      transform-origin: 100% 0;
+    }
+    &:nth-child(2){
+      width: 14px;
+      bottom: -40px;
+      height: 65px;
+      transition-delay: 1.3s;
+      transform: scaleY(0) translateZ(0);
+      transform-origin: 100% 0 ;
+    }
+    &:nth-child(3){
+      width: 260px;
+      bottom: -40px;
+      transition-delay: 1.7s;
+      transform: scaleX(0) translateZ(0);
+      transform-origin: 0  100%;
+    }
+  }
+
+}
