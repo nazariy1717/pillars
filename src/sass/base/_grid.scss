@@ -1,11 +1,10 @@
 @import "../tools/mixins";
 @import "../tools/breakpoints";
 
-
 .container {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .row {
@@ -122,5 +121,4 @@
     }
     .xl-offset-#{$i} {  margin-left: 8.333333% * $i; }
   }
-
 }
