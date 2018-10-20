@@ -1,0 +1,64 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+.contact{
+  position: relative;
+  padding: 70px 0 80px 0;
+  @media (max-width: $breakpoint-lg){
+    padding: 60px 0 50px 0;
+  }
+  @media (max-width: $breakpoint-sm){
+    padding: 60px 0 30px 0;
+  }
+  &__title{
+    @include title;
+    margin-bottom: 25px;
+  }
+  &__txt{
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--warm-grey);
+    margin-bottom: 30px;
+  }
+  &__form{
+    @media (max-width: $breakpoint-lg){
+      margin-bottom: 60px;
+      .form__group-25{
+        margin-bottom: 5px;
+      }
+      .form__group-30{
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+.contact-list{
+  max-width: 270px;
+  &__item{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    i{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--rouge);
+      font-size: 14px;
+    }
+    p{
+      font-size: 16px;
+      line-height: 1.25;
+      color: var(--black);
+    }
+  }
+}
+
+#contact-map{
+  height: 400px;
+  @media (max-width: $breakpoint-sm){
+    height: 300px;
+  }
+}

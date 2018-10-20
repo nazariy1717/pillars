@@ -1,0 +1,126 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.m-row {
+  margin: 0 -15px;
+}
+
+.column {
+  padding: 0 15px;
+  position: relative;
+}
+
+.columns {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+}
+
+.align-self-middle {
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+.align-self-end {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+.align-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.align-spaced {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.align-middle {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.align-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.align-right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.align-self-bottom {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+
+@for $i from 1 through 12{
+  .col-xs-#{$i} {
+    @include grid-size(8.333333% * $i);
+  }
+}
+
+@media (min-width: ($breakpoint-grid-sm)) {
+  @for $i from 1 through 12{
+    .col-sm-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-md)) {
+  @for $i from 1 through 12{
+    .col-md-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+    .medium-offset-#{$i} {  margin-left: 8.333333% * $i; }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-lg)) {
+  @for $i from 1 through 12{
+    .col-lg-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+    .large-offset-#{$i} {  margin-left: 8.333333% * $i; }
+  }
+}
+
+@media (min-width: ($breakpoint-grid-xl)) {
+  @for $i from 1 through 12{
+    .col-xl-#{$i} {
+      @include grid-size(8.333333% * $i);
+    }
+    .xl-offset-#{$i} {  margin-left: 8.333333% * $i; }
+  }
+
+}

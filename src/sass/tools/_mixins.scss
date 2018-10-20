@@ -1,0 +1,45 @@
+@import "../tools/breakpoints";
+
+@mixin bold() {
+  font-family: var(--font-family-bold);
+}
+
+@mixin title() {
+  font-family: 'Libre Baskerville', sans-serif;
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: bold;
+  display: block;
+  text-transform: initial;
+  @media (max-width: $breakpoint-sm){
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@mixin transition() {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+@mixin grid-size($size) {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 $size;
+  -ms-flex: 0 0 $size;
+  flex: 0 0 $size;
+  max-width: $size;
+}
+
+@mixin order($number) {
+  order: $number;
+}
+
+@mixin text-ellipsis($strokes) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $strokes;
+  -webkit-box-orient: vertical;
+}

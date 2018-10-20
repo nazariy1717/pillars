@@ -1,0 +1,30 @@
+{
+  "name": "aben_team",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazariy1717/aben_team.git"
+  },
+  "author": "Nazariy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazariy1717/aben_team/issues"
+  },
+  "homepage": "https://github.com/nazariy1717/aben_team#readme"
+}

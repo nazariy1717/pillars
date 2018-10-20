@@ -1,0 +1,41 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+.app-succeed{
+  &__title{
+    margin-bottom: 25px;
+    @media (max-width: $breakpoint-xl){
+      margin-bottom: 20px;
+    }
+  }
+  &__txt{
+    margin-bottom: 40px;
+    @media (max-width: $breakpoint-xl){
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.app-benefits{
+  background-color: #c2c2c2;
+  &__row{
+    height: 200px;
+  }
+  &__column{}
+  &__icon{
+    text-align: center;
+    display: block;
+    font-size: 45px;
+    color: var(--rouge);
+    margin-bottom: 25px;
+  }
+  &__txt{
+    font-family: 'Libre Baskerville',sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+  }
+}
