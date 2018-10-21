@@ -1,13 +1,5 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?jz04y0');
-  src:  url('../fonts/icomoon.eot?jz04y0#iefix') format('embedded-opentype'),
-  url('../fonts/icomoon.ttf?jz04y0') format('truetype'),
-  url('../fonts/icomoon.woff?jz04y0') format('woff'),
-  url('../fonts/icomoon.svg?jz04y0#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import "../tools/mixins";
+@import "../tools/breakpoints";
 
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
@@ -21,87 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before {
-  content: "\e916";
-}
-.icon-check:before {
-  content: "\e915";
-}
-.icon-marker2:before {
-  content: "\e912";
-}
-.icon-list:before {
-  content: "\e913";
-}
-.icon-grid:before {
-  content: "\e914";
-}
-.icon-bnft-4:before {
-  content: "\e90e";
-}
-.icon-bnft-3:before {
-  content: "\e90f";
-}
-.icon-bnft-2:before {
-  content: "\e910";
-}
-.icon-bnft-1:before {
-  content: "\e911";
-}
-.icon-car:before {
-  content: "\e90b";
-}
-.icon-shower:before {
-  content: "\e90c";
-}
-.icon-bedroom:before {
-  content: "\e90d";
-}
-
-.icon-play:before {
-  content: "\e90a";
-}
-.icon-reset:before {
-  content: "\e909";
-}
-.icon-pinterest:before {
-  content: "\e907";
-}
-.icon-print:before {
-  content: "\e908";
-}
-.icon-arrow-right:before {
-  content: "\e906";
-}
-.icon-mail:before {
-  content: "\e902";
-}
-.icon-fax:before {
-  content: "\e903";
-}
-.icon-phone:before {
-  content: "\e904";
-}
-.icon-marker:before {
-  content: "\e905";
-}
-.icon-arrow-down:before {
-  content: "\e901";
-}
-.icon-newsletter:before {
+.icon-location:before {
   content: "\e900";
 }
-.icon-google-plus:before {
-  content: "\ea8b";
+.icon-envelope:before {
+  content: "\e901";
+}
+.icon-phone:before {
+  content: "\e902";
 }
 .icon-facebook:before {
   content: "\ea90";
 }
 .icon-instagram:before {
   content: "\ea92";
-}
-.icon-twitter:before {
-  content: "\ea96";
 }
 .icon-linkedin2:before {
   content: "\eaca";

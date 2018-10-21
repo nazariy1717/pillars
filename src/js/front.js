@@ -4,6 +4,7 @@ let front = {
 
     init: function () {
         this.events();
+        $('body').addClass('--js-animate');
     },
 
     toogleNav: function(){

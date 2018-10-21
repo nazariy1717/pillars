@@ -1,23 +1,25 @@
 @import "../tools/mixins";
 @import "../tools/breakpoints";
 
-.post{
-  &.--js-animate{
-    .post__title-line{
-      width: 245px;
-      transform: scaleX(1) translateZ(0);
-    }
-    .post-head-lines{
-      span{
-        &:nth-child(1),&:nth-child(3){
-          transform: scaleX(1) translateZ(0);
-        }
-        &:nth-child(2){
-          transform: scaleY(1) translateZ(0);
-        }
+
+
+body.--js-animate{
+  .post__title-line{
+    transform: scaleX(1) translateZ(0);
+  }
+  .post-head-lines{
+    span{
+      &:nth-child(1),&:nth-child(3){
+        transform: scaleX(1) translateZ(0);
+      }
+      &:nth-child(2){
+        transform: scaleY(1) translateZ(0);
       }
     }
   }
+}
+
+.post{
   margin-top: 65px;
   @media (max-width: $breakpoint-md){
     margin-top: 40px;

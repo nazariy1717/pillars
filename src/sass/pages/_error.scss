@@ -1,6 +1,13 @@
 @import "../tools/mixins";
 @import "../tools/breakpoints";
 
+
+body.--js-animate{
+  .error-page__line{
+    transform: scaleX(1) translateZ(0);
+  }
+}
+
 .error-page{
   margin-top: 65px;
   padding: 60px 0;
@@ -9,12 +16,6 @@
     margin-top: 40px;
     min-height: calc(100vh - 40px);
   }
-  &.--js-animate{
-    .error-page__line{
-      transform: scaleX(1) translateZ(0);
-    }
-  }
-
   &__content{
     position: relative;
     text-align: center;

@@ -47,7 +47,57 @@
     </div>
 </header>
 
-<div id="contact-map" style="margin-top: 200px"></div>
+<div class="contact">
+    <div class="contact__head">
+        <div class="container contact__container">
+            <h1 class="contact__title">Контакти</h1>
+            <span class="contact__title-line"></span>
+        </div>
+    </div>
+    <div class="contact-block">
+        <span class="contact-block__line"></span>
+        <div class="container">
+            <div class="row m-row">
+                <div class="contact-block__column column large-offset-2 col-lg-10 col-xs-12">
+                    <div class="contact-block__inner">
+                        <ul class="contact-block__list">
+                            <li class="contact-block__list-item">
+                                <i class="icon-location"></i>
+                                <p>79021, м. Львів, <br>
+                                    вул. Кульпарківська, 93</p>
+                            </li>
+                            <li class="contact-block__list-item">
+                                <i class="icon-phone"></i>
+                                <p>+38(068)76-77-78-1 <br>
+                                    +38(068)76-77-78-2</p>
+                            </li>
+                            <li class="contact-block__list-item">
+                                <i class="icon-envelope"></i>
+                                <p>upbm@i.ua</p>
+                            </li>
+                            <li class="contact-block__list-item">
+                                <ul class="contact-block__soc">
+                                    <li class="contact-block__soc-item">
+                                        <a href="/" class="icon-instagram" target="_blank" rel="nofollow"></a>
+                                    </li>
+                                    <li class="contact-block__soc-item">
+                                        <a href="/" class="icon-linkedin2" target="_blank" rel="nofollow"></a>
+                                    </li>
+                                    <li class="contact-block__soc-item">
+                                        <a href="/" class="icon-facebook" target="_blank" rel="nofollow"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="contact-map"></div>
 
 <footer class="footer">
 
@@ -58,22 +108,107 @@
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="js/front.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3b1gPEjeBRZJXI5DJyCE4RJl-4PULenI&callback=initMap"></script>
+
 <script type="text/javascript">
     function initMap() {
         let locations = [
-            ['Bala Park', 45.002848, -79.604434],
+            ['Pillar Electric', 49.822925, 23.989443],
         ];
         let map = new google.maps.Map(document.getElementById('contact-map'), {
             zoom: 15,
-            center: new google.maps.LatLng(45.002848, -79.604434),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            center: new google.maps.LatLng(49.822925, 23.989443),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.neighborhood",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.station",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
+            ]
         });
         let infowindow = new google.maps.InfoWindow();
         let marker, i;
         for (i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
+                map: map,
+                icon: 'img/marker.png'
             });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
