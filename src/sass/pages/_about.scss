@@ -1,0 +1,25 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+.about-head{
+  position: relative;
+  margin-top: 65px;
+  height: 385px;
+  background: url('../img/about-bg.jpg') center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  @media (max-width: $breakpoint-md){
+    margin-top: 40px;
+  }
+}
+
+.about-sec{
+  margin-bottom: 85px;
+  &__column{
+    margin-bottom: 15px;
+  }
+  .app-txt + .app-txt{
+    margin-top: 30px;
+  }
+}
