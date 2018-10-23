@@ -2,6 +2,14 @@
 @import "../tools/breakpoints";
 
 
+
+body.--js-animate{
+  .about-block__inner-line{
+    transform: scaleX(1) translateZ(0);
+  }
+}
+
+
 .about-head{
   position: relative;
   margin-top: 65px;
@@ -11,6 +19,77 @@
   background-size: cover;
   @media (max-width: $breakpoint-md){
     margin-top: 40px;
+  }
+}
+
+
+.about-block{
+  margin-bottom: 90px;
+  &__inner{
+    position: relative;
+    padding: 75px 80px 30px 0;
+    background-color: #fff;
+    @media (max-width: $breakpoint-lg){
+      padding: 45px 30px 30px 30px;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: -999%;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #fff;
+      box-shadow: 0 0 31.7px 0.3px rgba(0, 0, 0, 0.17);
+      @media (max-width: $breakpoint-lg){
+        left: 0;
+      }
+    }
+  }
+  &__inner-line{
+    position: absolute;
+    top: 210px;
+    right: -290px;
+    width: 290px;
+    height: 12px;
+    background-color: red;
+    transition: all 1s cubic-bezier(.22,1,.36,1);
+    transition-delay: 0.3s;
+    transform: scaleX(0) translateZ(0);
+    transform-origin: 0 100%;
+    @media (max-width: $breakpoint-lg){
+      display: none;
+    }
+  }
+  &__item{
+    position: relative;
+    padding-left: 60px;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 35px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:before,&:after{
+      content: '';
+      position: absolute;
+    }
+    &:before{
+      left: 0;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+    &:after{
+      left: 5px;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+    }
   }
 }
 
