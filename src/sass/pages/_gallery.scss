@@ -1,0 +1,97 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+.gallery{
+  position: relative;
+  margin-top: 65px;
+  padding: 20px 0;
+  @media (max-width: $breakpoint-md){
+    margin-top: 40px;
+  }
+  &__row{
+    margin: 0 -8px;
+    &:nth-child(2n){
+      flex-flow: row-reverse wrap;
+    }
+  }
+  &__column{
+    padding: 0 8px;
+    &.--type-1{
+      @include grid-size(17%);
+      @media (max-width: $breakpoint-md){
+        @include grid-size(50%);
+      }
+      @media (max-width: 375px){
+        @include grid-size(100%);
+      }
+    }
+    &.--type-2{
+      @include grid-size(33%);
+      @media (max-width: $breakpoint-md){
+        @include grid-size(50%);
+      }
+      @media (max-width: 375px){
+        @include grid-size(100%);
+      }
+    }
+  }
+  &__btn{
+    position: relative;
+    display: block;
+    max-width: 195px;
+    margin: 30px auto auto;
+    color: #dc2a1c;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-right: 30px;
+    i{
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 24px;
+      color: #dc2a1c;
+      transition: all 0.3s;
+    }
+    &:hover{
+      i{
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.gallery-item{
+  display: block;
+  position: relative;
+  height: 210px;
+  cursor: pointer;
+  background: top center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin-bottom: 15px;
+  &:hover{
+    .gallery-item__overlay{
+      opacity: 1;
+    }
+  }
+  &__overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.37);
+    transition: all 0.3s;
+    i{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 30px;
+      color: red;
+    }
+  }
+}

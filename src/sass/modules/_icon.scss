@@ -13,6 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-chevron-thin-right:before {
+  content: "\e906";
+}
+.icon-chevron-thin-left:before {
+  content: "\e907";
+}
+.icon-eye:before {
+  content: "\e904";
+}
+.icon-add-outline:before {
+  content: "\e905";
+}
 .icon-close:before {
   content: "\e903";
 }
