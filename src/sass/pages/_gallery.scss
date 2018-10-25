@@ -36,30 +36,7 @@
       }
     }
   }
-  &__btn{
-    position: relative;
-    display: block;
-    max-width: 195px;
-    margin: 30px auto auto;
-    color: #dc2a1c;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 24px;
-    padding-right: 30px;
-    i{
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 24px;
-      color: #dc2a1c;
-      transition: all 0.3s;
-    }
-    &:hover{
-      i{
-        transform: rotate(90deg);
-      }
-    }
-  }
+
 }
 
 .gallery-item{

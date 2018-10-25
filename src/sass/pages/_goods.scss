@@ -97,6 +97,120 @@
   }
 }
 
+
+.goods-item-row{
+  margin: 0 -8px;
+}
+
+.goods-item-column{
+  padding: 0 8px;
+}
+
+.goods-item{
+  position: relative;
+  max-width: 355px;
+  margin: auto auto 60px;
+  @media (max-width: $breakpoint-md){
+    margin: auto auto 45px;
+  }
+  @media (max-width: $breakpoint-sm){
+    margin: auto auto 30px;
+  }
+  &__image{
+    position: relative;
+    height: 485px;
+    background: top center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-bottom: 15px;
+    @media (max-width: $breakpoint-lg){
+      height: 400px;
+    }
+    @media (max-width: $breakpoint-sm){
+      height: 300px;
+    }
+    &:hover{
+      .goods-item__overlay{
+        opacity: 1;
+      }
+    }
+  }
+  &__overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    background-color: rgba(0,0,0,0.66);
+    &:before{
+      content: '';
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      top: 10px;
+      bottom: 10px;
+      border: 10px solid #dc2a1c;
+    }
+  }
+  &__overlay-txt{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 24px;
+    color: #fff;
+    max-width: 200px;
+    margin: auto;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
+  }
+  &__overlay-btn{
+    position: absolute;
+    bottom: 115px;
+    left: 0;
+    right: 0;
+    width: 130px;
+    margin: auto;
+    @media (max-width: $breakpoint-sm){
+      bottom: 50px;
+    }
+  }
+  &__bottom{
+    padding: 4px 20px;
+    background-color: #1a1a1a;
+    @media (max-width: $breakpoint-lg){
+      padding: 5px;
+    }
+  }
+  &__list{
+    margin: 0 -5px;
+    li{
+      padding: 0 5px;
+      @include grid-size(50%);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      @media (max-width: $breakpoint-lg){
+        font-size: 13px;
+      }
+    }
+    li:nth-child(1){
+      color: #8c8b8b;
+      font-weight: 600;
+    }
+    li:nth-child(2){
+      color: #fff;
+    }
+  }
+}
+
+
 .goods-img{
   max-width: 410px;
   &__carousel{
