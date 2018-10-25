@@ -1,0 +1,123 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+body.--js-modal-animate{
+  .thank-modal__line{
+    transform: scaleX(1) translateZ(0);
+  }
+
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  outline: 0;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.55);
+  -webkit-overflow-scrolling: touch;
+  &__body{
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+  }
+  &__content{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 50px 240px 60px 240px;
+    @media (max-width: $breakpoint-lg){
+      padding: 45px 120px;
+    }
+    @media (max-width: $breakpoint-sm){
+      padding: 30px 45px;
+    }
+  }
+  &__title{
+    display: block;
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  &__close{
+    position: absolute;
+    right: -115px;
+    top: -15px;
+    width: 53px;
+    height: 53px;
+    color: #fff;
+    text-align: center;
+    line-height: 53px;
+    cursor: pointer;
+    background-color: #dc2a1c;
+    transition: all 0.3s;
+    @media (max-width: $breakpoint-xl){
+      right: 0;
+      top: 0;
+    }
+    &:hover{
+      background-color: red;
+    }
+  }
+  &__btn{
+    width: 150px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+
+
+.thank-modal{
+  padding: 185px 30px;
+  @media (max-width: $breakpoint-lg){
+    padding: 75px 30px;
+  }
+  &__title{
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  &__line{
+    position: absolute;
+    width: 195px;
+    height: 13px;
+    background-color: red;
+    transition: all 1s cubic-bezier(.22,1,.36,1);
+    transition-delay: 0.3s;
+    transform: scaleX(0) translateZ(0);
+    @media (max-width: $breakpoint-lg){
+      display: none;
+    }
+    &.--type-1{
+      top: 90px;
+      right: 100px;
+      transform-origin: 0 100%;
+    }
+    &.--type-2{
+      left: 20px;
+      bottom: 110px;
+      transform-origin: 100% 0;
+    }
+  }
+}
+
+
+

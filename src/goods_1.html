@@ -138,7 +138,7 @@
                     <p class="app-txt goods__desc">Компанія “УКРПРОМБУДМЕХАНІЗАЦІЯ” безпосередньо виготовляє стовпи (електроопори)
                         різних розмірів та складностей для освітлення необхідних об’єктів. Освітлення в нічну пору
                         доби – це важливий аспект безпеки, і тому освітлення має бути якісним, а відтак і не дорогим.</p>
-                    <button type="button" class="btn btn-main goods__btn">замовити</button>
+                    <button type="button" class="btn btn-main goods__btn modalTrigger" data-modal="#order_modal">замовити</button>
                 </div>
             </div>
         </div>
@@ -150,6 +150,39 @@
 
 </footer>
 
+
+<div class="modal" id="thank_modal">
+    <div class="modal__body">
+        <div class="modal__content thank-modal">
+            <span class="modal__close icon-close"></span>
+            <span class="thank-modal__title">Дякую за замовлення <br> наш менеджер зв’яжеться з Вами <br> найближчим часом!</span>
+            <span class="thank-modal__line --type-1"></span>
+            <span class="thank-modal__line --type-2"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="order_modal">
+    <div class="modal__body">
+        <div class="modal__content order-modal">
+            <span class="modal__close icon-close"></span>
+            <span class="modal__title">Зробити замовлення</span>
+            <form action="/" id="order_form">
+                <div class="form__group-20">
+                    <input type="text" name="name" class="form__input" placeholder="Ім’я">
+                </div>
+                <div class="form__group-20">
+                    <input type="text" name="phone" class="form__input" placeholder="Телефон">
+                </div>
+                <div class="form__group-20">
+                    <textarea name="message" id="message" class="form__area" placeholder="Повідомлення"></textarea>
+                </div>
+                <button type="submit" class="btn btn-main modal__btn">надіслати</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="js/libs/flickity.pkgd.min.js"></script>
