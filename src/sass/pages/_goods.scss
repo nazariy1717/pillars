@@ -1,0 +1,114 @@
+@import "../tools/mixins";
+@import "../tools/breakpoints";
+
+
+.goods{
+  position: relative;
+  margin-top: 65px;
+  padding: 20px 0;
+  @media (max-width: $breakpoint-md){
+    margin-top: 40px;
+  }
+  &__content{
+
+  }
+  &__title{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
+  &__column-left{
+    @include grid-size(29%);
+  }
+  &__column-right{
+    @include grid-size(calc(100% - 29%));
+  }
+  &__subtitle{
+    display: block;
+    color: #3d3c3c;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  &__row-item{
+    margin-bottom: 30px;
+  }
+  &__colors{
+    li{
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:nth-child(1){
+        background-color: black;
+      }
+      &:nth-child(2){
+        background-color: #959595;
+      }
+      &:nth-child(3){
+        background-color: white;
+        box-shadow: 0 0 5px 0.1px rgba(0, 0, 0, 0.5);
+      }
+      &:hover{
+        box-shadow: 0 0 5px 0.1px rgba(0, 0, 0, 0.5);
+      }
+      &.active{
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border: 2px solid red;
+        }
+      }
+    }
+    li + li {
+      margin-left: 20px;
+    }
+  }
+  &__desc{
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  &__btn{
+    max-width: 150px;
+  }
+}
+
+.goods-img{
+  max-width: 410px;
+  &__carousel{
+    margin-bottom: 20px;
+  }
+  &__carousel-cell{
+    width: 100%;
+    height: 555px;
+    background: center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  &__list{
+    margin: 0 -7px;
+    li{
+      display: inline-block;
+      padding: 0 7px;
+      @include grid-size(33.3333%);
+      margin-bottom: 15px;
+      a{
+        display: block;
+        width: 100%;
+        height: 95px;
+        background: top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+      }
+    }
+  }
+}
