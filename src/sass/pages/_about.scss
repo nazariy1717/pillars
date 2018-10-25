@@ -7,6 +7,9 @@ body.--js-animate{
   .about-block__inner-line{
     transform: scaleX(1) translateZ(0);
   }
+  .about-head-sec__line{
+    transform: scaleX(1) translateZ(0);
+  }
 }
 
 
@@ -19,6 +22,113 @@ body.--js-animate{
   background-size: cover;
   @media (max-width: $breakpoint-md){
     margin-top: 40px;
+  }
+  @media (max-width: $breakpoint-sm){
+    height: 200px;
+  }
+}
+
+
+.about-head-sec{
+  &__inner{
+    position: relative;
+    transform: translateY(-130px);
+    @media (max-width: $breakpoint-sm){
+      transform: translateY(-60px);
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: -999%;
+      background-color: #fff;
+      box-shadow: 0 0 31.7px 0.3px rgba(0, 0, 0, 0.17);
+      @media (max-width: $breakpoint-lg){
+        right: 0;
+      }
+    }
+  }
+  &__line{
+    position: absolute;
+    top: 210px;
+    left: -290px;
+    width: 285px;
+    height: 12px;
+    background-color: red;
+    transition: all 1s cubic-bezier(.22,1,.36,1);
+    transition-delay: 0.3s;
+    transform: scaleX(0) translateZ(0);
+    transform-origin: 0 100%;
+    @media (max-width: $breakpoint-lg){
+      display: none;
+    }
+  }
+  &__content{
+    position: relative;
+    z-index: 3;
+    padding: 55px 0 65px 25px;
+    min-height: 445px;
+    @media (max-width: $breakpoint-lg){
+      min-height: initial;
+      padding: 45px 30px;
+    }
+    @media (max-width: $breakpoint-sm){
+      padding: 30px 15px;
+    }
+  }
+  &__title{
+    position: relative;
+    display: block;
+    color: black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 90px;
+    @media (max-width: $breakpoint-lg){
+      margin-bottom: 60px;
+    }
+    @media (max-width: $breakpoint-md){
+      font-size: 36px;
+      line-height: 36px;
+    }
+    @media (max-width: $breakpoint-sm){
+      font-size: 24px;
+      line-height: 24px;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -35px;
+      height: 1px;
+      background-color: #000;
+      @media (max-width: $breakpoint-lg){
+        bottom: -20px;
+      }
+    }
+  }
+  &__subtitle{
+    width: 200px;
+    margin: auto;
+    display: block;
+    line-height: 36px;
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+    @media (max-width: $breakpoint-lg){
+      margin-bottom: 15px;
+    }
+    span{
+      color: red;
+      font-size: 72px;
+      font-weight: 700;
+      @media (max-width: $breakpoint-sm){
+        font-size: 50px;
+      }
+    }
   }
 }
 
@@ -69,6 +179,10 @@ body.--js-animate{
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 35px;
+    @media (max-width: $breakpoint-sm){
+      margin-bottom: 20px;
+      padding-left: 45px;
+    }
     &:last-child{
       margin-bottom: 0;
     }
