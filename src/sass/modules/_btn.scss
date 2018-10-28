@@ -38,6 +38,15 @@
     outline-color: transparent;
     outline-offset: 15px;
   }
+  &.--white{
+    color: var(--red-secondary);
+    background-color: #fff;
+    outline: 1px solid #fff;
+    &:hover{
+      outline-color: transparent;
+      outline-offset: 15px;
+    }
+  }
 }
 
 .btn-secondary{

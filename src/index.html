@@ -47,21 +47,108 @@
     </div>
 </header>
 
-<div id="fullpage">
-    <div class="section">Some section</div>
-    <div class="section">Some section</div>
-    <div class="section">Some section</div>
-    <div class="section">Some section</div>
+<div class="vertical-block">
+    <ul class="vertical-nav" id="vertical-nav">
+        <li data-menuanchor="app-section-1" class="vertical-nav__item">
+            <a href="#app-section-1" class="vertical-nav__link" >
+                <span>01</span>
+            </a>
+        </li>
+        <li data-menuanchor="app-section-2" class="vertical-nav__item">
+            <a href="#app-section-2" class="vertical-nav__link" >
+                <span>02</span>
+            </a>
+        </li>
+        <li data-menuanchor="app-section-3" class="vertical-nav__item">
+            <a href="#app-section-3" class="vertical-nav__link" >
+                <span>03</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="vertical-buttons">
+        <li>
+            <a class="vertical-buttons__btn --top">
+                <i class="icon-chevron-thin-up"></i>
+            </a>
+        </li>
+        <li>
+            <a class="vertical-buttons__btn --down">
+                <i class="icon-chevron-thin-down"></i>
+            </a>
+        </li>
+    </ul>
 </div>
 
-<footer class="footer"></footer>
+
+<div id="fullpage" class="app">
+
+    <div class="section app__section app-section-1"  style="background-image: url('img/app-bg-1.jpg');">
+        <div class="app__overlay"></div>
+        <div class="container app__container">
+            <div class="app__content">
+                <h1 class="app__title">Будуємо майбутнє <br> для вашого бізнесу</h1>
+                <span class="app-section-1__title-line"></span>
+                <div class="app-section-1__lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="app__bottom">
+            <a class="btn btn-main --white modalTrigger" data-modal="#order_modal">замовити</a>
+            <a href="/" class="btn btn-main">наші послуги</a>
+        </div>
+    </div>
+
+    <div class="section app__section" >Some section</div>
+    <div class="section app__section" >Some section</div>
+    <div class="section app__section" >Some section</div>
+</div>
+
+
+
+<div class="modal" id="order_modal">
+    <div class="modal__body">
+        <div class="modal__content order-modal">
+            <span class="modal__close icon-close"></span>
+            <span class="modal__title">Зробити замовлення</span>
+            <form action="/" id="order_form">
+                <div class="form__group-20">
+                    <input type="text" name="name" class="form__input" placeholder="Ім’я">
+                </div>
+                <div class="form__group-20">
+                    <input type="text" name="phone" class="form__input" placeholder="Телефон">
+                </div>
+                <div class="form__group-20">
+                    <textarea name="message" id="message" class="form__area" placeholder="Повідомлення"></textarea>
+                </div>
+                <button type="submit" class="btn btn-main modal__btn">надіслати</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="js/libs/fullpage.min.js"></script>
+<script src="js/libs/fullpage.extensions.min.js"></script>
 <script src="js/front.js"></script>
 <script>
     new fullpage('#fullpage', {
-        sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+        licenseKey: 'xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx',
+        responsiveHeight: 769,
+        anchors: ['app-section-1', 'app-section-2', 'app-section-3', 'app-section-4'],
+        menu: '#vertical-nav',
+        slidesNavigation: true,
+        slidesToSections: true,
+    });
+
+    $(document).on('click', '.vertical-buttons__btn.--top', function(){
+        fullpage_api.moveSectionUp();
+    });
+    $(document).on('click', '.vertical-buttons__btn.--down', function(){
+        fullpage_api.moveSectionDown();
     });
 </script>
 </body>

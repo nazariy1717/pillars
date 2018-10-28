@@ -13,7 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.icon-chevron-thin-up:before {
+  content: "\e908";
+}
+.icon-chevron-thin-down:before {
+  content: "\e909";
+}
 .icon-chevron-thin-right:before {
   content: "\e906";
 }
