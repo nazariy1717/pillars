@@ -2,6 +2,11 @@
 @import "../tools/breakpoints";
 
 .footer{
-  height: 200px;
-  background-color: var(--col-black);
+  &__content{
+    padding-left: 65px;
+  }
+  &__logo{
+    margin: auto;
+    display: block;
+  }
 }

@@ -54,7 +54,7 @@
   width: 100%;
   left: 0;
   right: 0;
-  bottom: -40px;
+  bottom: 15px;
   z-index: 10;
   padding: 0;
   list-style: none;
@@ -63,27 +63,17 @@
   transition: all 0.3s ease;
   .dot {
     position: relative;
-    width: 10px;
-    height: 10px;
-    border: solid 1px var(--col-battleship-grey);
-    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: white;
     display: inline-block;
     cursor: pointer;
-    background-color: transparent;
   }
   .dot + .dot {
-    margin-left: 10px;
+    margin-left: 12px;
   }
-  .dot.is-selected:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 50%;
-    background-color: var(--col-battleship-grey);
-    @include transition;
+  .dot.is-selected{
+    background-color: var(--red-secondary);
   }
 }
 
