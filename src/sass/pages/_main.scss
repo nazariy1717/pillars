@@ -15,6 +15,9 @@ body.fp-viewing-app-section-footer{
   bottom: 0;
   width: 80px;
   z-index: 9;
+  @media (max-width: $breakpoint-md){
+    width: 40px;
+  }
 }
 
 .vertical-nav{
@@ -26,7 +29,7 @@ body.fp-viewing-app-section-footer{
   text-align: center;
   z-index: 9;
   &__item{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     &.active > a{
       transform: scale(1.3) translateZ(0);
       transition: transform .55s cubic-bezier(.165,.84,.44,1),opacity .45s cubic-bezier(.165,.84,.44,1);
@@ -78,6 +81,9 @@ body.fp-viewing-app-section-footer{
   position: absolute;
   bottom: 30px;
   left: 10px;
+  @media (max-width: $breakpoint-md){
+    left: 5px;
+  }
   li{
     margin-bottom: 3px;
   }
@@ -91,6 +97,10 @@ body.fp-viewing-app-section-footer{
     text-align: center;
     background-color: var(--red-secondary);
     transition: all 0.3s;
+    @media (max-width: $breakpoint-md){
+      width: 30px;
+      height: 30px;
+    }
     i{
       position: absolute;
       left: 50%;
@@ -98,6 +108,9 @@ body.fp-viewing-app-section-footer{
       transform: translate(-50%,-50%);
       font-size: 24px;
       transition: all 0.3s;
+      @media (max-width: $breakpoint-sm){
+        font-size: 16px;
+      }
     }
     &:hover{
       background-color: #fff;
@@ -145,6 +158,12 @@ body.fp-viewing-app-section-footer{
     z-index: 1;
     &.--modifier{
       padding-left: 10px;
+      @media(max-width: 1200px){
+        padding-left: 110px;
+      }
+    }
+    @media (max-width: $breakpoint-md){
+      padding-left: 40px;
     }
   }
   &__section-line{
@@ -157,6 +176,9 @@ body.fp-viewing-app-section-footer{
     transition: transform 1s .4s cubic-bezier(.23,1,.32,1);
     bottom: 0;
     transform-origin: 0 100%;
+    @media (max-width: $breakpoint-md){
+      display: none;
+    }
   }
   &__content{
     position: relative;
@@ -170,6 +192,13 @@ body.fp-viewing-app-section-footer{
     text-transform: uppercase;
     &.--modifier{
       margin-bottom: 30px;
+      @media(max-height: 800px){
+        margin-bottom: 10px;
+      }
+    }
+    @media(max-height: 800px){
+      font-size: 30px;
+      line-height: 42px;
     }
   }
   &__subtitle{
@@ -184,7 +213,7 @@ body.fp-viewing-app-section-footer{
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 30px 0 30px 100px;
+    padding: 30px 10px 30px 100px;
     max-width: 1200px;
     margin: auto;
     text-align: right;
@@ -281,9 +310,26 @@ body.fp-viewing-app-section-footer{
   }
 }
 
+
+.app-section-2 {
+  @media(max-height: 800px){
+    padding-top: 25px;
+    .goods-item{
+      &__image{
+        height: 350px;
+      }
+      &__overlay-btn{
+        bottom: 85px;
+      }
+    }
+  }
+}
 .goods-gallery{
   &__cell{
     width: 25%;
+    @media(max-width: 1200px){
+      width: 33.3333333%;
+    }
   }
 }
 

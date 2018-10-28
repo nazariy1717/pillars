@@ -12,7 +12,7 @@ let main = {
     init: function () {
         new fullpage('#fullpage', {
             licenseKey: 'xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx',
-            responsiveHeight: 769,
+            // responsiveHeight: 769,
             anchors: ['app-section-1', 'app-section-2', 'app-section-3', 'app-section-4',
                 'app-section-5','app-section-6','app-section-footer'],
             menu: '#vertical-nav',
