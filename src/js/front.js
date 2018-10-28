@@ -18,16 +18,16 @@ let front = {
         }
     },
 
-
-
     events: function () {
         let self = this;
-
 
         $(document).on('click', '.hamburger', function () {
             self.toogleNav();
         });
 
+        $(document).on('click', '.--js-to-top', function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        });
 
     }
 };

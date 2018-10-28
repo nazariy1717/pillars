@@ -81,6 +81,7 @@ body.fp-viewing-app-section-footer{
   position: absolute;
   bottom: 30px;
   left: 10px;
+  z-index: 9;
   @media (max-width: $breakpoint-md){
     left: 5px;
   }
