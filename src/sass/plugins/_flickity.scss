@@ -61,6 +61,9 @@
   text-align: center;
   line-height: 1;
   transition: all 0.3s ease;
+  @media (max-width: $breakpoint-sm){
+    bottom: -15px;
+  }
   .dot {
     position: relative;
     width: 12px;
