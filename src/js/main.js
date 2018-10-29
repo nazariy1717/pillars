@@ -18,9 +18,16 @@ let main = {
             menu: '#vertical-nav',
             slidesNavigation: true,
             slidesToSections: true,
+            afterLoad: function(anchorLink,index) {
+                $(`.${index.anchor}`).find(".--js-counter").counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+            },
         });
         this.events();
         this.newSlider('.goods-gallery');
+
     },
 
     newSlider: function (selector, options) {
