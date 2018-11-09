@@ -58,9 +58,12 @@
   &__item{
     display: inline-block;
     & + & {
-      margin-left: 40px;
+      margin-left: 25px;
+      @media (max-width: 1100px){
+        margin-left: 15px;
+      }
       @media (max-width: $breakpoint-lg){
-        margin-left: 30px;
+        margin-left: 10px;
       }
     }
     @media (max-width: $breakpoint-md){
@@ -68,6 +71,9 @@
       text-align: left;
       margin: auto auto 5px!important;
       display: block;
+    }
+    &:nth-last-child(1), &:nth-last-child(2){
+      margin-left: 5px;
     }
   }
   &__link{
