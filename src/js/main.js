@@ -39,9 +39,12 @@ let main = {
     events: function () {
         let self = this;
 
+
+
         $(document).on('click', '.vertical-buttons__btn.--top', function(){
             fullpage_api.moveSectionUp();
         });
+
         $(document).on('click', '.vertical-buttons__btn.--down', function(){
             fullpage_api.moveSectionDown();
         });

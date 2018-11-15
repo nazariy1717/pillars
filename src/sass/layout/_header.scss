@@ -68,12 +68,20 @@
     }
     @media (max-width: $breakpoint-md){
       width: 120px;
-      text-align: left;
+      text-align: center;
       margin: auto auto 5px!important;
       display: block;
     }
     &:nth-last-child(1), &:nth-last-child(2){
       margin-left: 5px;
+    }
+    @media (max-width: $breakpoint-md){
+      &:nth-last-child(1), &:nth-last-child(2), &:nth-last-child(3){
+        display: inline-block;
+        text-align: center;
+        width: auto;
+        margin-left: 10px!important;
+      }
     }
   }
   &__link{
@@ -145,6 +153,15 @@
     &, .hamburger__box {
       cursor: pointer;
       display: inline-block;
+    }
+    &__text {
+      position: absolute;
+      top: 9px;
+      right: 45px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      line-height: 24px;
     }
     &__box {
       position: relative;
